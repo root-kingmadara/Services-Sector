@@ -562,5 +562,10 @@ textarea{min-height:124px;resize:vertical}
 .ssbanner::before{background:linear-gradient(90deg,rgba(7,29,59,.88) 0%,rgba(7,29,59,.62) 42%,rgba(7,29,59,.2) 100%)}
 @media (max-width:980px){.ssbanner{min-height:clamp(500px,78vh,620px)}}
 @media (max-width:760px){.ssbanner{min-height:360px}.ssbanner .hero-wave{height:34px}.ssbanner .wrap{padding-bottom:50px}}
-/* keep the presenter and the screen in view when the photo is cropped tall */
-.sv#service-1 .pic img{object-position:12% center}
+/* Business Development: photo across the top so the whole meeting scene, screen and people, stays in view */
+.sv-grid .sv.wide#service-1{flex-direction:column}
+.sv.wide#service-1 .pic{flex:none;aspect-ratio:2.2/1;min-height:0;order:0}
+.sv.wide#service-1 .pic img{object-position:center 42%}
+.sv.wide#service-1 ul{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1000px){.sv.wide#service-1 ul{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.sv.wide#service-1 ul{grid-template-columns:1fr}.sv.wide#service-1 .pic{aspect-ratio:2/1}}
