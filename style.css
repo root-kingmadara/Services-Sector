@@ -527,17 +527,18 @@ textarea{min-height:124px;resize:vertical}
 .sx h3{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:14px}
 .sx h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-family:var(--body);font-weight:700;margin:18px 0 6px}
 .sx p{font-size:.96rem;line-height:1.7;max-width:none}
-/* Business Development: full-width card so the longer text does not stretch its neighbours */
-.sv-grid .sv#service-1{grid-column:1/-1;flex-direction:row}
-.sv#service-1 .pic{flex:0 0 38%;aspect-ratio:auto;min-height:100%}
-.sv#service-1 .pic img{position:absolute;inset:0}
-.sv#service-1 .body{padding:30px 34px 34px}
-.sv#service-1 h3{font-size:1.4rem}
-.sv#service-1 .tag{font-size:1.02rem}
-.sv#service-1 .lead{max-width:62ch}
-.sv#service-1 ul{grid-template-columns:repeat(2,1fr);gap:12px 28px}
-@media (max-width:900px){.sv-grid .sv#service-1{flex-direction:column}.sv#service-1 .pic{flex:none;aspect-ratio:16/10;min-height:0}.sv#service-1 ul{grid-template-columns:1fr}.sv#service-1 .body{padding:24px 24px 28px}}
-@media (max-width:620px){.sv#service-1 .body{padding:20px 18px 24px}}
+/* Services with a long write-up: full-width card, image beside the text, two bullet columns */
+.sv-grid .sv.wide{grid-column:1/-1;flex-direction:row}
+.sv.wide .pic{flex:0 0 38%;aspect-ratio:auto;min-height:100%}
+.sv.wide .pic img{position:absolute;inset:0}
+.sv.wide:nth-of-type(even) .pic{order:2}
+.sv.wide .body{padding:30px 34px 34px}
+.sv.wide h3{font-size:1.4rem}
+.sv.wide .tag{font-size:1.02rem}
+.sv.wide .lead{max-width:62ch}
+.sv.wide ul{grid-template-columns:repeat(2,1fr);gap:12px 28px}
+@media (max-width:900px){.sv-grid .sv.wide{flex-direction:column}.sv.wide .pic{flex:none;aspect-ratio:16/10;min-height:0;order:0!important}.sv.wide ul{grid-template-columns:1fr}.sv.wide .body{padding:24px 24px 28px}}
+@media (max-width:620px){.sv.wide .body{padding:20px 18px 24px}}
 @media (max-width:1100px){.sv-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){.sx,.sx:nth-child(even){grid-template-columns:1fr}.sx:nth-child(even) .pics{order:0}.sx .pics{min-height:0;aspect-ratio:16/9}}
 @media (max-width:620px){.sv-grid{grid-template-columns:1fr}.sv .body{padding:20px 18px 24px}}
